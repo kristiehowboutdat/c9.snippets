@@ -3,11 +3,30 @@ snippet test
 	if (${1:true}) {
 		${2}
 	}
-	$0
+	${0}
+
+
+snippet maxlen
+	// eslint-disable-next-line max-len ${0}
+
+
+snippet react
+	// @flow
+	import * as React from 'react';
+	${0}
+
+
+snippet stf
+	import * as React from 'react';
+	import { shallow } from 'enzyme';
+	import ${1} from './index.js';
+
+	describe('<${1} />', () => {
+		it('${2}', () => {
+			const wrapper = shallow(
+				<${1} ${0} />
+			);
+		expect(wrapper).toMatchSnapshot();
+		);
+	});
 	
-snippet pleaseWork
-	if (${1:true}) {
-		${2}
-	} else {
-		${0}
-	}

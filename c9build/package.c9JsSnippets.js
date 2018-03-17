@@ -25,7 +25,7 @@ define("plugins/c9JsSnippets/__static__",[], function(require, exports, module) 
                 {
                     "type": "snippets",
                     "filename": "javascript.snippets",
-                    "data": "# scope: javascript\nsnippet test\n\tif (${1:true}) {\n\t\t${2}\n\t}\n\t$0\n\t\nsnippet pleaseWork\n\tif (${1:true}) {\n\t\t${2}\n\t} else {\n\t\t${0}\n\t}\n"
+                    "data": "# scope: javascript\nsnippet test\n\tif (${1:true}) {\n\t\t${2}\n\t}\n\t${0}\n\n\nsnippet maxlen\n\t// eslint-disable-next-line max-len ${0}\n\n\nsnippet react\n\t// @flow\n\timport * as React from 'react';\n\t${0}\n\n\nsnippet stf\n\timport * as React from 'react';\n\timport { shallow } from 'enzyme';\n\timport ${1} from './index.js';\n\n\tdescribe('<${1} />', () => {\n\t\tit('${2}', () => {\n\t\t\tconst wrapper = shallow(\n\t\t\t\t<${1} ${0} />\n\t\t\t);\n\t\texpect(wrapper).toMatchSnapshot();\n\t\t);\n\t});\n\t\n"
                 }
             ].forEach(function(x) {
                 debug.addStaticPlugin(x.type, "c9JsSnippets", x.filename, x.data, plugin);
