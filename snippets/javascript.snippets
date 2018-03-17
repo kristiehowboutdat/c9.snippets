@@ -9,6 +9,28 @@ snippet test
 snippet maxlen
 	// eslint-disable-next-line max-len ${0}
 
+snippet eslint
+	// eslint-disable-next-line ${0}
+
+snippet flow
+	// @flow
+	${0}
+
+snippet noflow
+	// @noflow
+	${0}
+
+snippet expectError
+	// $ExpectError
+
+snippet fixMe
+	// $FlowFixMe
+
+snippet comment
+	//------------------------------------------------------------------------------
+	// ${0}
+	//------------------------------------------------------------------------------
+
 
 snippet react
 	// @flow
@@ -22,11 +44,29 @@ snippet stf
 	import ${1} from './index.js';
 
 	describe('<${1} />', () => {
-		it('${2}', () => {
-			const wrapper = shallow(
-				<${1} ${0} />
-			);
-		expect(wrapper).toMatchSnapshot();
-		);
+	  it('${2}', () => {
+	    const wrapper = shallow(
+	      <${1} ${0} />
+	    );
+	    expect(wrapper).toMatchSnapshot();
+	  );
 	});
 	
+
+snippet sts
+	it('${2}', () => {
+	  const wrapper = shallow(
+	    <${1} ${0} />
+	  );
+	  expect(wrapper).toMatchSnapshot();
+	});
+
+snippet describe
+	describe('${1}', () => {
+	  it('${2}', () => {
+	    const wrapper = shallow(
+	      <${1} ${0} />
+	    );
+	    expect(wrapper).toMatchSnapshot();
+	  });
+	});
