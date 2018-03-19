@@ -31,7 +31,6 @@ snippet comment
 	// ${0}
 	//------------------------------------------------------------------------------
 
-
 snippet react
 	// @flow
 	import * as React from 'react';
@@ -71,3 +70,109 @@ snippet describe
 	  });
 	});
 
+snippet stateless
+	// @flow
+	import * as React from 'react';
+	import css from './styles.css';
+	
+	type Props = {
+	  ${2}
+	};
+	
+	const ${1} = ({${3}}: Props) => {
+	  return (
+	    <div>
+	      ${0}
+	    </div>
+	  );
+	};
+	
+	export default ${1};
+
+snippet connectedcomponent
+	// @flow
+	import * as React from 'react';
+	import { connect } from 'react-redux';
+	import css from './styles.css';
+	
+	type Props = {
+	  ${2}
+	};
+	
+	const mapStateToProps = (state: State): Props => {
+	  return {
+	    ${3}
+	  };
+	};
+	
+	
+	const dispatcher = {
+	  ${5}
+	};
+	
+	type DispatcherProps = {
+	  ${4}
+	};
+	
+	class ${1} extends React.Component<Props & DispatcherProps> {
+	  render() {
+	    return (
+	      <div>
+	        ${0}
+	      </div>
+	    );
+	  }
+	}
+	
+	export default connect(mapStateToProps, dispatcher)(${1});
+
+
+snippet component
+	// @flow
+	import * as React from 'react';
+	import css from './styles.css';
+	
+	type Props = {
+	  ${2}
+	};
+	
+	class ${1} extends React.Component<Props> {
+	  render() {
+	    return (
+	      <div>
+	        ${0}
+	      </div>
+	    );
+	  }
+	}
+	
+	export default ${1};
+
+snippet componentstate
+	// @flow
+	import * as React from 'react';
+	import css from './styles.css';
+	
+	type Props = {
+	  ${2}
+	};
+	
+	type State = {
+	  ${3}
+	}
+	
+	class ${1} extends React.Component<Props, State> {
+	  state = {
+	    ${4}
+	  }
+	  
+	  render() {
+	    return (
+	      <div>
+	        ${0}
+	      </div>
+	    );
+	  }
+	}
+	
+	export default ${1};
