@@ -42,16 +42,21 @@ snippet stf
 	      <${1} ${0} />
 	    );
 	    expect(wrapper).toMatchSnapshot();
-	  );
+	  });
 	});
 	
 
-snippet sts
+snippet itshallow
 	it('${2}', () => {
 	  const wrapper = shallow(
 	    <${1} ${0} />
 	  );
 	  expect(wrapper).toMatchSnapshot();
+	});
+
+snippet it
+	it('${1}', () => {
+	  expect(${2}).${0}();
 	});
 
 snippet describe

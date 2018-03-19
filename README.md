@@ -63,3 +63,5 @@ See the sample below:
 - Make sure to refresh your AWS Cloud9 window after you make changes to your hosted snippets
 
 
+## Examples
+- [Some ACE editor built-in snippets](https://github.com/ajaxorg/ace/tree/master/lib/ace/snippets)
