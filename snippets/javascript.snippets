@@ -170,3 +170,14 @@ snippet componentstate
 	}
 	
 	export default ${1};
+
+snippet switch
+	switch (${1:expression}) {
+	  case ${3:case}:
+	    ${4:// code}
+	    break;
+	  ${0}
+	  default:
+	    ${2:// code}
+	    break;
+	}
