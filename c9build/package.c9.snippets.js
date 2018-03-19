@@ -25,7 +25,7 @@ define("plugins/c9.snippets/__static__",[], function(require, exports, module) {
                 {
                     "type": "snippets",
                     "filename": "go.snippets",
-                    "data": "# scope: javascript\nsnippet map\n\tmap[${1:T}]${2:T}\n\nsnippet gotest\n\tif (${1:true}) {\n\t\t${2}\n\t}\n\t${0}\n\nsnippet mapT\n\tmap[${1:T}]${2:T}{${0}}\n\nsnippet pleaseWork\n\tif (${1:true}) {\n\t\t${2}\n\t}"
+                    "data": "# scope: _\nsnippet map\n\tmap[${1:T}]${2:T}\n\nsnippet gotest\n\tif (${1:true}) {\n\t\t${2}\n\t}\n\t${0}\n\nsnippet mapT\n\tmap[${1:T}]${2:T}{${0}}\n\nsnippet pleaseWork\n\tif (${1:true}) {\n\t\t${2}\n\t}"
                 },
                 {
                     "type": "snippets",
