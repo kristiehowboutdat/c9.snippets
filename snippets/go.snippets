@@ -1,35 +1,77 @@
 # scope: golang
-snippet map
-	map[${1:T}]${2:T}
 
-snippet gotest
-	if (${1:true}) {
-		${2}
+snippet ap
+	append(${1:slice}, ${2:value})
+
+snippet br
+	break
+
+snippet ch
+	chan ${1:int}
+
+snippet cs
+	case ${1:value}:
+		${2:/* code */}
+
+snippet c
+	const ${1:NAME} = ${2:0}
+
+snippet df
+	defer ${1:func}()
+
+
+snippet dfr
+	defer func() {
+		if err := recover(); err != nil {
+			${1:/* code */}
+		}
+	}()
+
+snippet if
+	if ${1:/* condition */} {
+		${2:/* code */}
 	}
-	${0}
+
+snippet fo
+	for ${2:i} = 0; $2 < ${1:count}; $2${3:++} {
+		${4:/* code */}
+	}
+
+
+snippet fr
+	for ${1:k}, ${2:v} := range ${3} {
+		${4:/* code */}
+	}
+
+snippet cn
+	continue
 
 snippet mapT
 	map[${1:T}]${2:T}{${0}}
 
-snippet err1p
+snippet err
 	if err != nil {
-		return stacktrace.Propagate(err, "${0}")
+		return stacktrace.Propagate(err, "${1}")
 	}
+	${0}
 
-snippet err1n
+snippet errn
 	if err != nil {
-		return stacktrace.NewError("${0}")
+		return stacktrace.NewError("${1}")
 	}
+	${0}
 
-snippet err2p
+snippet err2
 	if err != nil {
 		return ${1:nil}, stacktrace.Propagate(err, "${2}")
 	}
+	${0}
 
 snippet err2n
 	if err != nil {
 		return ${1:nil}, stacktrace.NewError("${2}")
 	}
+	${0}
 
 snippet typei
 	type ${1:name} interface {
@@ -38,15 +80,40 @@ snippet typei
 
 snippet types
 	type ${1:name} struct {
-		${0}
+		${2}
 	}
 
 snippet funcc
-	func (${1:s} ${2:T}) ${3:Do}(${4}) {
+	func (${1:s} ${2:T}) ${3:Do}(${4:/* args */}) ${5:error} {
 		${0}
 	}
 
 snippet funcp
-	func (${1:s} *${2:T}) ${3:Do}(${4}) {
+	func (${1:s} *${2:T}) ${3:Do}(${4:/* args */}) ${5:error} {
 		${0}
+	}
+
+snippet mk
+	make(${1:[]string}, ${2:0})
+
+snippet pr
+	fmt.Printf("${1:%s}\n", ${2:var})
+	${0}
+
+snippet sp
+	fmt.Sprintf("${1:%s}", ${2:var})${3}
+
+snippet sl
+	select {
+	case ${1:v1} := <-${2:chan1}
+		${3:/* code */}
+	case ${4:v2} := <-${5:chan2}
+		${6:/* code */}
+	default:
+		${7:/* code */}
+	}
+
+snippet New
+	func New(${1:/* args */}) ${2:/* interface */} {
+		return &${3:/* struct */}{${4:/* initialize */}}
 	}
