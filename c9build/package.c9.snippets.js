@@ -25,7 +25,7 @@ define("plugins/c9.snippets/__static__",[], function(require, exports, module) {
                 {
                     "type": "snippets",
                     "filename": "go.snippets",
-                    "data": "# scope: _\nsnippet map\n\tmap[${1:T}]${2:T}\n\nsnippet gotest\n\tif (${1:true}) {\n\t\t${2}\n\t}\n\t${0}\n\nsnippet mapT\n\tmap[${1:T}]${2:T}{${0}}\n\nsnippet pleaseWork\n\tif (${1:true}) {\n\t\t${2}\n\t}"
+                    "data": "# scope: golang\nsnippet map\n\tmap[${1:T}]${2:T}\n\nsnippet gotest\n\tif (${1:true}) {\n\t\t${2}\n\t}\n\t${0}\n\nsnippet mapT\n\tmap[${1:T}]${2:T}{${0}}\n\nsnippet err1p\n\tif err != nil {\n\t\treturn stacktrace.Propagate(err, \"${0}\")\n\t}\n\nsnippet err1n\n\tif err != nil {\n\t\treturn stacktrace.NewError(\"${0}\")\n\t}\n\nsnippet err2p\n\tif err != nil {\n\t\treturn ${1:nil}, stacktrace.Propagate(err, \"${2}\")\n\t}\n\nsnippet err2n\n\tif err != nil {\n\t\treturn ${1:nil}, stacktrace.NewError(\"${2}\")\n\t}\n\nsnippet typei\n\ttype ${1:name} interface {\n\t\t${0}\n\t}\n\nsnippet types\n\ttype ${1:name} struct {\n\t\t${0}\n\t}\n\nsnippet funcp\n\tfunc (${1:s} *${2:T}) ${3:Do}(${4}) {\n\t\t${0}\n\t}"
                 },
                 {
                     "type": "snippets",

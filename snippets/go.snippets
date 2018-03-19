@@ -1,4 +1,4 @@
-# scope: _
+# scope: golang
 snippet map
 	map[${1:T}]${2:T}
 
@@ -11,7 +11,42 @@ snippet gotest
 snippet mapT
 	map[${1:T}]${2:T}{${0}}
 
-snippet pleaseWork
-	if (${1:true}) {
-		${2}
+snippet err1p
+	if err != nil {
+		return stacktrace.Propagate(err, "${0}")
+	}
+
+snippet err1n
+	if err != nil {
+		return stacktrace.NewError("${0}")
+	}
+
+snippet err2p
+	if err != nil {
+		return ${1:nil}, stacktrace.Propagate(err, "${2}")
+	}
+
+snippet err2n
+	if err != nil {
+		return ${1:nil}, stacktrace.NewError("${2}")
+	}
+
+snippet typei
+	type ${1:name} interface {
+		${0}
+	}
+
+snippet types
+	type ${1:name} struct {
+		${0}
+	}
+
+snippet funcc
+	func (${1:s} ${2:T}) ${3:Do}(${4}) {
+		${0}
+	}
+
+snippet funcp
+	func (${1:s} *${2:T}) ${3:Do}(${4}) {
+		${0}
 	}
