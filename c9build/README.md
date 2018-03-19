@@ -30,7 +30,9 @@ There is a very specific file structure and format that the snippets must be cre
 
 - You **must** put your snippets inside a folder called `snippets` that is at the same level as the `package.json`.
 - Your snippets files should end with `.snippets`
-- Your `package.json` should have a field `"name"` that matches the name of the parent folder 
+- Your `package.json` should have a field `"name"` that matches the name of the parent folder
+- Snippets need to be indented with tabs (not spaces)
+- You need to escape the `$` character if trying to insert it as part of a snippet's body: ex. `// \$FlowFixMe` instead of `// $FlowFixMe`
 
 See the sample below:
 
