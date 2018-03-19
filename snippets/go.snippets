@@ -1,4 +1,12 @@
-# scope: go
-
+# scope: go, golang
 snippet map
 	map[${1:T}]${2:T}
+	
+snippet test
+	if (${1:true}) {
+		${2}
+	}
+	${0}
+
+snippet mapT
+	map[${1:T}]${2:T}{${0}}
