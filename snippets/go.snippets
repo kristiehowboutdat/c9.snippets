@@ -1,7 +1,7 @@
 # scope: golang
 
 snippet ap
-	append(${1:slice}, ${2:value})
+	${1:slice} = append(${1:slice}, ${2:value})
 
 snippet br
 	break
@@ -55,40 +55,32 @@ snippet err
 	}
 	${0}
 
-snippet errn
-	if err != nil {
-		return stacktrace.NewError("${1}")
-	}
-	${0}
-
 snippet err2
 	if err != nil {
 		return ${1:nil}, stacktrace.Propagate(err, "${2}")
 	}
 	${0}
 
-snippet err2n
-	if err != nil {
-		return ${1:nil}, stacktrace.NewError("${2}")
-	}
-	${0}
-
 snippet typei
+	// ${1:name} ${2:description}
 	type ${1:name} interface {
 		${0}
 	}
 
 snippet types
+	// ${1:name} ${2:description}
 	type ${1:name} struct {
-		${2}
+		${0}
 	}
 
 snippet funcc
+	// ${3:Do} ${6:description}
 	func (${1:s} ${2:T}) ${3:Do}(${4:/* args */}) ${5:error} {
 		${0}
 	}
 
 snippet funcp
+	// ${3:Do} ${6:description}
 	func (${1:s} *${2:T}) ${3:Do}(${4:/* args */}) ${5:error} {
 		${0}
 	}
@@ -114,6 +106,7 @@ snippet sl
 	}
 
 snippet New
-	func New(${1:/* args */}) ${2:/* interface */} {
-		return &${3:/* struct */}{${4:/* initialize */}}
+	// New ${1:description}
+	func New(${2:/* args */}) ${3:/* interface */} {
+		return &${4:/* struct */}{${5:/* initialize */}}
 	}
