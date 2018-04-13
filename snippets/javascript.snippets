@@ -25,6 +25,16 @@ snippet comment
 	// ${0}
 	//------------------------------------------------------------------------------
 
+snippet import
+	import ${1} from '${2}';${0}
+
+
+snippet cn
+	className={css.${1}}${0}
+
+snippet classes
+	const classes = className ? `\${className} \${${1}}` : ${1};
+
 snippet react
 	// @flow
 	import * as React from 'react';
@@ -38,10 +48,10 @@ snippet stf
 
 	describe('<${1} />', () => {
 	  it('${2}', () => {
-	    const wrapper = shallow(
-	      <${1} ${0} />
-	    );
-	    expect(wrapper).toMatchSnapshot();
+		const wrapper = shallow(
+		  <${1} ${0} />
+		);
+		expect(wrapper).toMatchSnapshot();
 	  });
 	});
 	
@@ -49,7 +59,7 @@ snippet stf
 snippet itshallow
 	it('${2}', () => {
 	  const wrapper = shallow(
-	    <${1} ${0} />
+		<${1} ${0} />
 	  );
 	  expect(wrapper).toMatchSnapshot();
 	});
@@ -62,10 +72,10 @@ snippet it
 snippet describe
 	describe('${1}', () => {
 	  it('${2}', () => {
-	    const wrapper = shallow(
-	      <${1} ${0} />
-	    );
-	    expect(wrapper).toMatchSnapshot();
+		const wrapper = shallow(
+		  <${1} ${0} />
+		);
+		expect(wrapper).toMatchSnapshot();
 	  });
 	});
 
@@ -80,9 +90,9 @@ snippet stateless
 	
 	const ${1} = ({${3}}: Props) => {
 	  return (
-	    <div>
-	      ${0}
-	    </div>
+		<div>
+		  ${0}
+		</div>
 	  );
 	};
 	
@@ -100,7 +110,7 @@ snippet connectedcomponent
 	
 	const mapStateToProps = (state: State): Props => {
 	  return {
-	    ${3}
+		${3}
 	  };
 	};
 	
@@ -115,11 +125,11 @@ snippet connectedcomponent
 	
 	class ${1} extends React.Component<Props & DispatcherProps> {
 	  render() {
-	    return (
-	      <div>
-	        ${0}
-	      </div>
-	    );
+		return (
+		  <div>
+			${0}
+		  </div>
+		);
 	  }
 	}
 	
@@ -137,11 +147,11 @@ snippet component
 	
 	class ${1} extends React.Component<Props> {
 	  render() {
-	    return (
-	      <div>
-	        ${0}
-	      </div>
-	    );
+		return (
+		  <div>
+			${0}
+		  </div>
+		);
 	  }
 	}
 	
@@ -162,15 +172,15 @@ snippet componentstate
 	
 	class ${1} extends React.Component<Props, State> {
 	  state = {
-	    ${4}
+		${4}
 	  }
 	  
 	  render() {
-	    return (
-	      <div>
-	        ${0}
-	      </div>
-	    );
+		return (
+		  <div>
+			${0}
+		  </div>
+		);
 	  }
 	}
 	
@@ -179,21 +189,23 @@ snippet componentstate
 snippet switch
 	switch (${1:expression}) {
 	  case ${3:case}:
-	    ${4:// code}
-	    break;
+		${4:// code}
+		break;
 	  ${0}
 	  default:
-	    ${2:// code}
-	    break;
+		${2:// code}
+		break;
 	}
 
-snippet import
-	import ${1} from '${2}';${0}
 
 # Expect to be true
 snippet tbt
 	expect(${1}).toBe(true);${0}
 
+
 # Expect to be false
 snippet tbf
 	expect(${1}).toBe(false);${0}
+
+
+	
