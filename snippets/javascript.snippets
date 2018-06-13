@@ -251,6 +251,13 @@ snippet tbt
 snippet tbf
 	.toBe(false);${0}
 
+# Expect to have length
+snippet thl
+	.toHaveLength(${1});${0}
+
+# Expect to have been called times
+snippet tct
+	.toHaveBeenCalledTimes(${1});${0}
 
 # import shortcuts for graphql
 snippet cql
@@ -258,3 +265,7 @@ snippet cql
 
 snippet tql
 	import type { ${1} } from 'types/graphql';${0}
+
+# data-testid
+snippet data
+	data-testid="${1}"${0}
