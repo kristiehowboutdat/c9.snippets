@@ -30,14 +30,14 @@ snippet import
 
 
 snippet lodash
-	import ${1} from 'lodash';${0}
+	import {${1}} from 'lodash';${0}
 
 
 # Component import from file with the same name
 snippet ci
 	import ${1} from './${1}';${0}
 
-
+# className insert
 snippet cn
 	className={css.${1}}${0}
 
@@ -49,7 +49,7 @@ snippet react
 	import * as React from 'react';
 	${0}
 
-
+# Shallow test file 
 snippet stf
 	import * as React from 'react';
 	import { shallow } from 'enzyme';
@@ -94,7 +94,7 @@ snippet describeshallow
 	  });
 	});
 
-
+# Describe snippet
 snippet describe
 	describe('${1}', () => {
 	  test('${1}', () => {
@@ -102,7 +102,7 @@ snippet describe
 	  });
 	});
 
-
+# Stateless Functional Component
 snippet stateless
 	// @flow
 	import * as React from 'react';
@@ -159,7 +159,7 @@ snippet connectedcomponent
 	
 	export default connect(mapStateToProps, dispatcher)(${1});
 
-
+# React Component
 snippet component
 	// @flow
 	import * as React from 'react';
@@ -181,6 +181,7 @@ snippet component
 	
 	export default ${1};
 
+# React Component with State
 snippet componentstate
 	// @flow
 	import * as React from 'react';
@@ -274,5 +275,9 @@ snippet data
 snippet div
 	<div ${1}>${0}</div>
 
-snippet span
+# JSX snippets
+snippet <div
+	<div ${1}>${0}</div>
+
+snippet <span
 	<span ${1}>${0}</span>
