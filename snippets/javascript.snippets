@@ -99,14 +99,12 @@ snippet it
 
 snippet test
 	test('${1}', () => {
-	  expect(${2}).${0}();
+	  expect(${2})${0};
 	});
 
+# Expect
 snippet exp
-	expect(${1}).${2};${0}
-
-snippet expect
-	expect(${1}).${2};${0}
+	expect(${1})${2};${0}
 
 snippet describeshallow
 	describe('${1}', () => {
@@ -118,11 +116,12 @@ snippet describeshallow
 	  });
 	});
 
+
 # Describe snippet
-snippet describe
+snippet desc
 	describe('${1}', () => {
-	  test('${1}', () => {
-		expect(${2}).${0}();
+	  test('${2}', () => {
+		expect(${1}${3})${0};
 	  });
 	});
 
@@ -281,6 +280,22 @@ snippet thl
 # Expect to have been called times
 snippet tct
 	.toHaveBeenCalledTimes(${1});${0}
+
+# Expect to have been called with
+snippet tcw
+	.toHaveBeenCalledWith(${1});${0}
+
+# Expect to contain
+snippet tc
+	.toContain(${1});${0}
+
+# Expect to equal
+snippet te
+	.toEqual(${1});${0}
+
+# Enzyme wrapper.text snippet
+snippet wt
+	wrapper.text()${0}
 
 # import shortcuts for graphql
 snippet cql
