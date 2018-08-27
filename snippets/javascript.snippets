@@ -248,8 +248,8 @@ snippet query
 		  }
 	
 		  ${0}
-	
-		  return <div data={data} />;
+
+		  return <div />;
 		}}
 	  </Query>
 	);
@@ -293,9 +293,21 @@ snippet tc
 snippet te
 	.toEqual(${1});${0}
 
+# Expect to match snapshot
+snippet tms
+	.toMatchSnapshot();${0}
+
+# Expect wrapper to match snapshot
+snippet snap
+	expect(wrapper).toMatchSnapshot();${0}
+
 # Enzyme wrapper.text snippet
 snippet wt
-	wrapper.text()${0}
+	wrapper.text()
+
+# Enzyme find attr
+snippet finddata
+	wrapper.find(`[data-testid="${0}"]`)
 
 # import shortcuts for graphql
 snippet cql
